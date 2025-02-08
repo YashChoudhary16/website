@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #28a745;
+            color: white;
+        }
+        .no {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+    
+    </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop muted>
+        <source src="spotifydown.com - Valentine - Laufey.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="container">
+        <h1>Will you spend forever with me ❤️</h1>
+        <p>You are the love of my life, and I can't imagine a future without you!</p>
+        <div class="video">
+        <video autoplay loop muted playsinline style="width: 70%; height: 70%;">
+            <source src="We found each other by chance.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        </div>
+        <div class="buttons">
+            <button class="yes" onclick="celebrate()">Yes! 🥳</button>
+            <button class="no" onmouseover="moveButton(this)">No 😢</button>
+        </div>
+    </div>
+    <script>
+        function celebrate() {
+            document.body.innerHTML = '<h1>Yay! 🎉 I love you! ❤️</h1>';
+        }
+        function moveButton(button) {
+            let x = Math.random() * window.innerWidth - 100;
+            let y = Math.random() * window.innerHeight - 50;
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        setTimeout(() => {
+        let audio = document.getElementById("bg-music");
+        audio.muted = false;
+        audio.play();
+    }, 1000); // 1-second delay before unmuting
+</script>
+    </script>
+</body>
+</html>
