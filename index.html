@@ -89,6 +89,9 @@
         audio.muted = false;
         audio.play();
     }, 1000); // 1-second delay before unmuting
+        document.body.addEventListener("click", function() {
+        document.getElementById("bg-music").play();
+    }, { once: true }); // Plays on first click
 </script>
     </script>
 </body>
